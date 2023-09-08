@@ -29,6 +29,10 @@ public class CharacterStatus : MonoBehaviour
         if (hp <= 0)
         {
             // Destroy itself when its HP hit zero
+            if (gameObject.layer == GameObjectLayers.ENEMY)
+            {
+                PlayerScore.kills++;
+            }
             Destroy(gameObject);
         }
     }

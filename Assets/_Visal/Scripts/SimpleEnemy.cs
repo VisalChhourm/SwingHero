@@ -9,7 +9,9 @@ public class SimpleEnemy : CharacterMovement
     {
         if (_target == null)
         {
-            _target = GameObject.FindWithTag("Player").transform;
+            var player = GameObject.FindWithTag("Player");
+            if (player != null)
+                _target = player.transform;
         }
     }
 

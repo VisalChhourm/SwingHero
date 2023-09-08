@@ -6,10 +6,6 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float _spinSpeed = 500;
     [SerializeField] private int _damage = 10;
 
-
-    private const int PLAYER_WEAPON_LAYER = 8,
-        ENEMY_WEAPON_LAYER = 9;
-
     // Update is called once per frame
     void Update()
     {
@@ -23,7 +19,7 @@ public class Weapon : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         int otherObjLayer = other.gameObject.layer;
-        if (otherObjLayer == PLAYER_WEAPON_LAYER || otherObjLayer == ENEMY_WEAPON_LAYER)
+        if (otherObjLayer == GameObjectLayers.PLAYER_WEAPON_LAYER || otherObjLayer == GameObjectLayers.ENEMY_WEAPON_LAYER)
         {
             // Handle when collide with other weapon
             // Switch spin direction
